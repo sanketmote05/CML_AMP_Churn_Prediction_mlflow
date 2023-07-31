@@ -247,7 +247,7 @@ for record in json.loads(df_sample_clean.to_json(orient="records")):
 # The "ground truth" loop adds the updated actual label value and an accuracy measure
 # every 100 calls to the model.
 for index, vals in enumerate(response_labels_sample):
-    print("Update {} records".format(index)) if (index % 10 == 0) else None
+    print("Update {} records".format(index)) if (index % 25 == 0) else None
     cdsw.track_delayed_metrics({"final_label": vals["final_label"]}, vals["uuid"])
     if index % 25 == 0:
         start_timestamp_ms = vals["timestamp_ms"]
