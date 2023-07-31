@@ -210,7 +210,7 @@ def churn_error(item, percent):
         return True if item == "Yes" else False
 
 # Get 1000 samples
-df_sample = df.sample(1000)
+df_sample = df.sample(100)
 df_sample.groupby("Churn")["Churn"].count()
 df_sample_clean = (
     df_sample.replace({"SeniorCitizen": {"1": "Yes", "0": "No"}})
