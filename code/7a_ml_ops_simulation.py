@@ -210,7 +210,7 @@ def churn_error(item, percent):
         return True if item == "Yes" else False
 
 # Get 1000 samples
-df_sample = df.sample(100)
+df_sample = df.sample(200)
 df_sample.groupby("Churn")["Churn"].count()
 df_sample_clean = (
     df_sample.replace({"SeniorCitizen": {"1": "Yes", "0": "No"}})
@@ -227,7 +227,7 @@ percent_max = len(df_sample_clean)
 
 for record in json.loads(df_sample_clean.to_json(orient="records")):
     print("Added {} records".format(percent_counter)) if (
-        percent_counter % 10 == 0
+        percent_counter % 25 == 0
     ) else None
     percent_counter += 1
     no_churn_record = copy.deepcopy(record)
@@ -249,7 +249,7 @@ for record in json.loads(df_sample_clean.to_json(orient="records")):
 for index, vals in enumerate(response_labels_sample):
     print("Update {} records".format(index)) if (index % 10 == 0) else None
     cdsw.track_delayed_metrics({"final_label": vals["final_label"]}, vals["uuid"])
-    if index % 9 == 0:
+    if index % 25 == 0:
         start_timestamp_ms = vals["timestamp_ms"]
         final_labels = []
         response_labels = []
