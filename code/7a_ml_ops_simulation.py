@@ -227,7 +227,7 @@ percent_max = len(df_sample_clean)
 
 for record in json.loads(df_sample_clean.to_json(orient="records")):
     print("Added {} records".format(percent_counter)) if (
-        percent_counter % 25 == 0
+        percent_counter % 10 == 0
     ) else None
     percent_counter += 1
     no_churn_record = copy.deepcopy(record)
@@ -247,9 +247,9 @@ for record in json.loads(df_sample_clean.to_json(orient="records")):
 # The "ground truth" loop adds the updated actual label value and an accuracy measure
 # every 100 calls to the model.
 for index, vals in enumerate(response_labels_sample):
-    print("Update {} records".format(index)) if (index % 25 == 0) else None
+    print("Update {} records".format(index)) if (index % 10 == 0) else None
     cdsw.track_delayed_metrics({"final_label": vals["final_label"]}, vals["uuid"])
-    if index % 25 == 0:
+    if index % 9 == 0:
         start_timestamp_ms = vals["timestamp_ms"]
         final_labels = []
         response_labels = []
