@@ -162,7 +162,7 @@ mlflow.autolog(log_input_examples=True)
 
 # Define a search grid
 kernel = ["linear", "rbf"]
-max_iter = [1, 10, 100, 1000, 10000]
+max_iter = [1, 10, 100]
 
 # Iterate over the grid, re-training the model every time and recording train and test score as the metrics
 for k in kernel:

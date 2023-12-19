@@ -1,3 +1,4 @@
+LICENSE.txt
 README.md
 setup.py
 churn_prediction.egg-info/PKG-INFO
