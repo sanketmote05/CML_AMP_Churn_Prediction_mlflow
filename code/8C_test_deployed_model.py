@@ -53,8 +53,9 @@ import cdsw
 
 # let us try inferencing from this model for 5 Customer with feature values below. Note that each list provides the feature values for one customer
 model_Input =  {"inputs": [[0.0, 0.0, 1.0, 1.0, 58.0, 1.0, 0.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 0.0, 1.0, 20.5, 1191.4], [0.0, 0.0, 1.0, 0.0, 50.0, 1.0, 2.0, 0.0, 0.0, 0.0, 2.0, 0.0, 2.0, 2.0, 1.0, 0.0, 0.0, 75.7, 3876.2], [0.0, 0.0, 1.0, 0.0, 55.0, 1.0, 2.0, 0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.0, 1.0, 2.0, 90.15, 4916.95], [0.0, 0.0, 0.0, 0.0, 16.0, 1.0, 2.0, 1.0, 0.0, 0.0, 2.0, 0.0, 0.0, 2.0, 0.0, 1.0, 2.0, 88.45, 1422.1], [0.0, 0.0, 1.0, 0.0, 8.0, 1.0, 0.0, 1.0, 0.0, 2.0, 2.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 101.15, 842.9]]}
-
-model_name =  os.getenv("REGISTERED_MODEL_NAME") or "Customer Churn Model MLOps API Endpoint"
+user_name = "user-your-username"
+model_name =  os.getenv("REGISTERED_MODEL_NAME") or f"Customer Churn Model MLOps API Endpoint-{user_name}"
+#model_name =  os.getenv("REGISTERED_MODEL_NAME") or "Customer Churn Model MLOps API Endpoint"
 client = cmlapi.default_client()
 project_id = os.environ["CDSW_PROJECT_ID"]
 
