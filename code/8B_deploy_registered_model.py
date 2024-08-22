@@ -224,7 +224,7 @@ def create_modelBuild_for_deployment(client, projectId, modelVersionId, modelCre
     # Create Model Build
     CreateModelBuildRequest = {
                                 "registered_model_version_id": modelVersionId, 
-                                "runtime_identifier": "docker.repository.cloudera.com/cloudera/cdsw/ml-runtime-workbench-python3.9-standard:2023.08.2-b8",
+                                "runtime_identifier": "docker.repository.cloudera.com/cloudera/cdsw/ml-runtime-workbench-python3.9-standard:2024.02.1-b4",
                                 "comment": "invoking model build",
                                 "model_id": modelCreationId
                               }
