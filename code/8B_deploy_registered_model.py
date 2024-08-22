@@ -102,7 +102,9 @@ import cdsw
 cml_client = cmlapi.default_client()
 
 # This name depends on 8A_registermodel.py. If you are testing model registry and deployments, use the name from the UI instead of the below
-model_name =  os.getenv("REGISTERED_MODEL_NAME") or "Customer Churn Model MLOps API Endpoint"
+user_name = "user-your-username"
+model_name =  os.getenv("REGISTERED_MODEL_NAME") or f"Customer Churn Model MLOps API Endpoint-{user_name}"
+#model_name =  os.getenv("REGISTERED_MODEL_NAME") or "Customer Churn Model MLOps API Endpoint"
 print("Registered Model : {0} ".format(model_name))
 #List all the experiments in a given project of a certain name
 search_filter= { "model_name" : model_name}
